@@ -1,2 +1,2 @@
 # game-of-life
-baby steps in C
+Baby steps in coding C
