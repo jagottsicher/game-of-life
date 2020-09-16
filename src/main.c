@@ -9,12 +9,15 @@
 //#define WIDTH = 30;
 //#define HEIGHT = 30;
 int width = 30;
-int height = 30;
-int array1[30][30];
-int array2[30][30];
+int height = 100;
+int array1[30][100];
+int array2[30][100];
 int i;
 int j;
 int living_cells_around = 0;
+
+int main()
+{
 
 // beide Arrays mit 0 füllen.
 for (i = 1; i < width; i++)
@@ -26,6 +29,7 @@ for (i = 1; i < width; i++)
         }
     }
 
+
 // Array1 in zwei geschachtelten for Schleifen mit zufällig mit 0 und 1 füllen
 for (i = 1; i < width; i++)
     {
@@ -35,12 +39,12 @@ for (i = 1; i < width; i++)
         }
     }
 
-int main()
-{
+
 // main loop
-while (1)
-{
-//    Ausgeabefunktion it array1 aufrufen: auf 1/1 setzen und ausgabe durch zwei for schleifen. 0 gibt ein leerzeichen aus, 1 gibt eine *
+    while (1)
+    {
+
+// Ausgeabefunktion it array1 aufrufen: auf 1/1 setzen und ausgabe durch zwei for schleifen. 0 gibt ein leerzeichen aus, 1 gibt eine *
 // auf Nullpunkt setzen
 printf("\33[%d;%dH", 1, 1);
 
@@ -49,7 +53,7 @@ for (i = 1; i < width; i++)
     {
         for (j = 1; j < height; j++)
         {
-        If (array1[i][j] == 1) 
+        if (array1[i][j] == 1) 
             {
             printf("*");
             }
@@ -70,31 +74,103 @@ for (i = 1; i < width; i++)
         living_cells_around = 0;
 
         // rundum lebende nachbarn zählen, ränder werden ignoriert
-        if !(i-1 < 0 || j-1 < 0 || i+1 > width || j+1 > height)
-        {
-        if (array1[i-1][j-1]) == 1 
-            living_cells_around++;
-        if (array1[i][j-1]) == 1 
-            living_cells_around++;
-        if (array1[i+1][j-1]) == 1 
-            living_cells_around++;
-        if (array1[i-1][j]) == 1 
-            living_cells_around++;
-        if (array1[i+1][j]) == 1 
-            living_cells_around++;
-        if (array1[i-1][j+1]) == 1 
-            living_cells_around++;
-        if (array1[i][j+1]) == 1 
-            living_cells_around++;
-        if (array1[i+1][j+1]) == 1 
-            living_cells_around++;
-        } 
+        if (!(i-1) < 0 || (j-1) < 0 || (i+1) > width || (j+1) > height);
+            {
+            if (array1[i-1][j-1] == 1) 
+                living_cells_around++;
+            if (array1[i][j-1] == 1) 
+                living_cells_around++;
+            if (array1[i+1][j-1] == 1) 
+                living_cells_around++;
+            if (array1[i-1][j] == 1) 
+                living_cells_around++;
+            if (array1[i+1][j] == 1) 
+                living_cells_around++;
+            if (array1[i-1][j+1] == 1) 
+                living_cells_around++;
+            if (array1[i][j+1] == 1) 
+                living_cells_around++;
+            if (array1[i+1][j+1] == 1) 
+                living_cells_around++;
+
+            if (array1[i][j] == 1 && living_cells_around < 2) 
+                array2[i][j] = 0;
+            if (array1[i][j] == 1 && (living_cells_around == 2 || living_cells_around == 3)) 
+                array2[i][j] = 1;
+            if (array1[i][j] == 1 && living_cells_around > 3) 
+                array2[i][j] = 0;
+            if (array1[i][j] == 0 && living_cells_around == 3) 
+                array2[i][j] = 1;
+            } 
         }
     }
 
+/*
 //    Ausgeabefunktion mit array2 aufrufen: auf 1/1 setzen und ausgabe durch zwei for schleifen. 0 gibt ein leerzeichen aus, 1 gibt eine *
 
 //    array1 in zwei geschachtelten schleifen entlangehen und nach regel befüllen
+*/
+// Ausgeabefunktion it array2 aufrufen: auf 1/1 setzen und ausgabe durch zwei for schleifen. 0 gibt ein leerzeichen aus, 1 gibt eine *
+// auf Nullpunkt setzen
+printf("\33[%d;%dH", 1, 1);
+
+// printout one becomes *, zero becomes space. Linebreak after each line.
+for (i = 1; i < width; i++)
+    {
+        for (j = 1; j < height; j++)
+        {
+        if (array2[i][j] == 1) 
+            {
+            printf("*");
+            }
+            else
+            {
+            printf(" ");
+            }
+        }
+        printf("\n");    
+    }
+
+//    array1 in zwei geschachtelten schleifen entlangehen und nach regel befüllen
+for (i = 1; i < width; i++)
+    {
+        for (j = 1; j < height; j++)
+        {
+        // anzahl lebender nachbarn auf 0
+        living_cells_around = 0;
+
+        // rundum lebende nachbarn zählen, ränder werden ignoriert
+        if (!(i-1) < 0 || (j-1) < 0 || (i+1) > width || (j+1) > height);
+            {
+            if (array2[i-1][j-1] == 1) 
+                living_cells_around++;
+            if (array2[i][j-1] == 1) 
+                living_cells_around++;
+            if (array2[i+1][j-1] == 1) 
+                living_cells_around++;
+            if (array2[i-1][j] == 1) 
+                living_cells_around++;
+            if (array2[i+1][j] == 1) 
+                living_cells_around++;
+            if (array2[i-1][j+1] == 1) 
+                living_cells_around++;
+            if (array2[i][j+1] == 1) 
+                living_cells_around++;
+            if (array2[i+1][j+1] == 1) 
+                living_cells_around++;
+
+            if (array2[i][j] == 1 && living_cells_around < 2) 
+                array1[i][j] = 0;
+            if (array2[i][j] == 1 && (living_cells_around == 2 || living_cells_around == 3)) 
+                array1[i][j] = 1;
+            if (array2[i][j] == 1 && living_cells_around > 3) 
+                array1[i][j] = 0;
+            if (array2[i][j] == 0 && living_cells_around == 3) 
+                array1[i][j] = 1;
+            } 
+        }
+    }
+
 
 }
 
