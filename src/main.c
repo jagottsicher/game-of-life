@@ -46,7 +46,7 @@ for (int i = 1; i < width; i++)
     }
 
 /*
-Array in zwei geschachtelten for Schleifen mit zufällig mit 0 und 1 füllen
+Array1 in zwei geschachtelten for Schleifen mit zufällig mit 0 und 1 füllen
 
 
 WHILE
