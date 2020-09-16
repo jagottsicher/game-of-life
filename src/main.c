@@ -34,7 +34,7 @@ int array1[30][30];
 int array2[30][30];
 int i;
 int j;
-int living_cells = 0;
+int living_cells_around = 0;
 
 int main()
 {
@@ -91,27 +91,33 @@ for (i = 1; i < width; i++)
         for (j = 1; j < height; j++)
         {
         // anzahl lebender nachbarn auf 0
-        living_cells = 0;
+        living_cells_around = 0;
         // rundum lebende nachbarn zählen
-        i-1,j-1
-        i, j-1
-        i+1, j-1
-        
-        i-1,j
-
-        i+1, j
-        
-        i-1,j+1
-        i, j+1
-        i+1, j+1
-        
-        if () == 1 
-            living_cells++
-        
-        
-        
-        
-        
+                
+        if (array1[i-1][j-1]) == 1 
+            living_cells_around++;
+        if (array1[i][j-1]) == 1 
+            living_cells_around++;
+        if (array1[i+1][j-1]) == 1 
+            living_cells_around++;
+        if (array1[i-1][j]) == 1 
+            living_cells_around++;
+        if (array1[i+1][j]) == 1 
+            living_cells_around++;
+        if (array1[i-1][j+1]) == 1 
+            living_cells_around++;
+        if (array1[i][j+1]) == 1 
+            living_cells_around++;
+        if (array1[i+1][j+1]) == 1 
+            living_cells_around++;
+            
+            
+            
+            
+            
+            
+            
+            
         // wenn zelle in array1 an xy lebendig dann
             wenn anzahl lebender nachbarn < 2 dann zelle xy in array2 auf 0
             wenn anzahl lebender nachbarn = 2 oder anzahl lebender Zellen = 3 dann zelle xy in array2 auf 1
@@ -126,7 +132,10 @@ for (i = 1; i < width; i++)
 //    array1 in zwei geschachtelten schleifen entlangehen und nach regel befüllen
 
 }
+*/
 
+
+/*
     Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.
     Any live cell with more than three live neighbours dies, as if by overcrowding.
     Any live cell with two or three live neighbours lives on to the next generation.
