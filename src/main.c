@@ -64,7 +64,6 @@ for (i = 1; i < width; i++)
 while (1)
 {
 //    Ausgeabefunktion it array1 aufrufen: auf 1/1 setzen und ausgabe durch zwei for schleifen. 0 gibt ein leerzeichen aus, 1 gibt eine *
-
 // auf Nullpunkt setzen
 printf("\33[%d;%dH", 1, 1);
 
@@ -92,8 +91,10 @@ for (i = 1; i < width; i++)
         {
         // anzahl lebender nachbarn auf 0
         living_cells_around = 0;
-        // rundum lebende nachbarn zählen
-                
+
+        // rundum lebende nachbarn zählen, ränder werden ignoriert
+        if !(i-1 < 0 || j-1 < 0 || i+1 > width || j+1 > height)
+        {
         if (array1[i-1][j-1]) == 1 
             living_cells_around++;
         if (array1[i][j-1]) == 1 
@@ -110,20 +111,14 @@ for (i = 1; i < width; i++)
             living_cells_around++;
         if (array1[i+1][j+1]) == 1 
             living_cells_around++;
-            
-            
-            
-            
-            
-            
-            
-            
+        } 
+
         // wenn zelle in array1 an xy lebendig dann
-            wenn anzahl lebender nachbarn < 2 dann zelle xy in array2 auf 0
-            wenn anzahl lebender nachbarn = 2 oder anzahl lebender Zellen = 3 dann zelle xy in array2 auf 1
-            wenn anzahl lebender nachbarn > 3 dann zelle xy in array2 auf 0
-           else
-           if anzahl lebender nachbarn = 3 dann zelle xy in array2 auf 1
+        // wenn anzahl lebender nachbarn < 2 dann zelle xy in array2 auf 0
+        // wenn anzahl lebender nachbarn = 2 oder anzahl lebender Zellen = 3 dann zelle xy in array2 auf 1
+        // wenn anzahl lebender nachbarn > 3 dann zelle xy in array2 auf 0
+        // else
+        // if anzahl lebender nachbarn = 3 dann zelle xy in array2 auf 1
         }
     }
 
