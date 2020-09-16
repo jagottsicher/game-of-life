@@ -5,27 +5,7 @@
 #include "myFunctions.h"
 
 
-/*
-int main()
-{
-    int userInputa = getNumberFromUser();
-// goto upper left corner
-    printf("\33[%d;%dH", 1, 1);
-//    printEvenOrOdd(userInputa);
-    srand(time(NULL));
-    int random_number;
-
-for (int i = 0; i < userInputa; ++i)
-    {
-        random_number = returnRandom(0,1);
-        printf("%d\n", random_number);
-    }
-*/
-
-
-
 // Breite und Höhe des Arrays definieren
-
 //#define WIDTH = 30;
 //#define HEIGHT = 30;
 int width = 30;
@@ -36,8 +16,6 @@ int i;
 int j;
 int living_cells_around = 0;
 
-int main()
-{
 // beide Arrays mit 0 füllen.
 for (i = 1; i < width; i++)
     {
@@ -48,8 +26,6 @@ for (i = 1; i < width; i++)
         }
     }
 
-/*
-
 // Array1 in zwei geschachtelten for Schleifen mit zufällig mit 0 und 1 füllen
 for (i = 1; i < width; i++)
     {
@@ -59,8 +35,9 @@ for (i = 1; i < width; i++)
         }
     }
 
+int main()
+{
 // main loop
-
 while (1)
 {
 //    Ausgeabefunktion it array1 aufrufen: auf 1/1 setzen und ausgabe durch zwei for schleifen. 0 gibt ein leerzeichen aus, 1 gibt eine *
@@ -112,13 +89,6 @@ for (i = 1; i < width; i++)
         if (array1[i+1][j+1]) == 1 
             living_cells_around++;
         } 
-
-        // wenn zelle in array1 an xy lebendig dann
-        // wenn anzahl lebender nachbarn < 2 dann zelle xy in array2 auf 0
-        // wenn anzahl lebender nachbarn = 2 oder anzahl lebender Zellen = 3 dann zelle xy in array2 auf 1
-        // wenn anzahl lebender nachbarn > 3 dann zelle xy in array2 auf 0
-        // else
-        // if anzahl lebender nachbarn = 3 dann zelle xy in array2 auf 1
         }
     }
 
@@ -127,19 +97,15 @@ for (i = 1; i < width; i++)
 //    array1 in zwei geschachtelten schleifen entlangehen und nach regel befüllen
 
 }
-*/
-
-
-/*
-    Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.
-    Any live cell with more than three live neighbours dies, as if by overcrowding.
-    Any live cell with two or three live neighbours lives on to the next generation.
-    Any dead cell with exactly three live neighbours becomes a live cell.
-
-
-
-
-*/
 
 return 0;
+
+/*  
+Dead code as a reminder of the rules
+Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.
+Any live cell with more than three live neighbours dies, as if by overcrowding.
+Any live cell with two or three live neighbours lives on to the next generation.
+Any dead cell with exactly three live neighbours becomes a live cell.
+*/
+
 }
