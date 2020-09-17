@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 #include "myFunctions.h"
 
 // Definition
@@ -20,17 +22,6 @@ int getNumberFromUser()
     int number_from_user; 
 
     printf("Please enter an interger number!\n");
-    scanf("%d", &number_from_user);
-
-    return number_from_user; 
-}
-
-// Definition
-int throwDice()
-{
-    int number_from_user; //0x00: 12
-
-    printf("Pls enter a interger number!\n");
     scanf("%d", &number_from_user);
 
     return number_from_user; 
