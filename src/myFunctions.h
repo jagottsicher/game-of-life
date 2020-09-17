@@ -17,7 +17,7 @@ int getNumberFromUser();
 int throwDice();
 
 // Return Type: int
-// Name: throwDice
+// Name: returnRandom
 // Parameters: None
 // Declaration
 int returnRandom(int lower, int upper);

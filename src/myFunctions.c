@@ -29,7 +29,7 @@ int getNumberFromUser()
 
 // Definition
 int returnRandom(int lower, int upper) 
-{ 
+{
     int num = (rand() % (upper - lower + 1)) + lower; 
 
     return num; 
