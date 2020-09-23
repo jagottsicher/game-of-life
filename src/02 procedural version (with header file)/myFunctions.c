@@ -4,19 +4,6 @@
 #include "myFunctions.h"
 
 // Definition
-void printEvenOrOdd(int number)
-{
-    if ((number % 2) == 0)
-    {
-        printf("Even!\n");
-    }
-    else
-    {
-        printf("Odd!\n");
-    }
-}
-
-// Definition
 int getNumberFromUser()
 {
     int number_from_user; 
@@ -25,6 +12,17 @@ int getNumberFromUser()
     scanf("%d", &number_from_user);
 
     return number_from_user; 
+}
+
+// Definition
+int pressAnyKey()
+{
+    int input_key; 
+
+    printf("press any key\n");
+    scanf(" %c", &input_key);
+    
+    return atoi(input_key); 
 }
 
 // Definition
