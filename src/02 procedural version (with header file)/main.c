@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <math.h>
-#include <time.h>
+#include <math.h> 
+#include <time.h> 
 #include <unistd.h>
 
 #include "myFunctions.h"
@@ -46,6 +46,11 @@ for (i = 0; i < height; i++)
             array1[j][i] = returnRandom(0,1);
         }
     }
+
+// anykey and clear screen
+pressAnyKey();
+clear();
+
 
 // main loop
 while (go_on)
@@ -116,10 +121,9 @@ for (i = 0; i < height; i++)
             
             if (array1[j][i] == 0)
             {
-                if ((living_cells_around == 2) || (living_cells_around == 3))
+                if ((living_cells_around == 3))
                 {
-                    if (returnRandom(0,5) == 1)
-                    array2[j][i] = 1;
+                array2[j][i] = 1;
                 }
             }
             // copy each element of array1 in array3  
@@ -195,10 +199,9 @@ for (i = 0; i < height; i++)
             
             if (array2[j][i] == 0)
             {
-                if ((living_cells_around == 2) || (living_cells_around == 3))
+                if ((living_cells_around == 3))
                 {
-                    if (returnRandom(0,5) == 1)
-                        array1[j][i] = 1;
+                    array1[j][i] = 1;
                 }
             }
             // check if xy identical with last round's copy of array 1 before changing matrix 1
@@ -212,7 +215,7 @@ for (i = 0; i < height; i++)
 generation_counter++;
 printf("Generation #%d\n", generation_counter);
 // go_on = getNumberFromUser();
-// pressAnyKey();
+
 } //End while loop
 
 return 0;

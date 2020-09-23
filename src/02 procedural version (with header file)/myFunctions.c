@@ -22,7 +22,7 @@ int pressAnyKey()
     printf("press any key\n");
     scanf(" %c", &input_key);
     
-    return atoi(input_key); 
+    return 0; 
 }
 
 // Definition
@@ -31,4 +31,10 @@ int returnRandom(int lower, int upper)
     int num = (rand() % (upper - lower + 1)) + lower; 
 
     return num; 
+}
+
+//Definition
+void clear()
+{
+    printf("\033[H\033[J");
 }

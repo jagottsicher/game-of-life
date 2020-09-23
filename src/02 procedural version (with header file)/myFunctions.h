@@ -15,3 +15,9 @@ int pressAnyKey();
 // Parameters: None
 // Declaration
 int returnRandom(int lower, int upper);
+
+// Return Type: void
+// Name: clear
+// Parameters: None
+// Declaration
+void clear();
