@@ -21,7 +21,6 @@ int go_on = 1;
 int generation_counter = 0;
 // int not_same = 1;
 
-
 int main()
 {
 
@@ -36,7 +35,6 @@ for (i = 0; i < height; i++)
         }
     }
 
-
 // Array1 in zwei geschachtelten for Schleifen mit zufällig mit 0 und 1 füllen
 srand(time(NULL)); 
 for (i = 0; i < height; i++)
@@ -50,7 +48,6 @@ for (i = 0; i < height; i++)
 // anykey and clear screen
 pressAnyKey();
 clear();
-
 
 // main loop
 while (go_on)
@@ -154,8 +151,6 @@ for (i = 0; i < height; i++)
         }
         printf("\n");    
     }
-
-
 
 //    array1 in zwei geschachtelten schleifen entlangehen und nach regel befüllen
 for (i = 0; i < height; i++)
