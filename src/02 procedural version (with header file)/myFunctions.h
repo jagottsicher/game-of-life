@@ -1,9 +1,3 @@
-// Return Type: void
-// Name: printEvenOrOdd
-// Parameters: int number
-// Declaration
-void printEvenOrOdd(int number);
-
 // Return Type: int
 // Name: getNumberFromUser
 // Parameters: None
@@ -11,10 +5,10 @@ void printEvenOrOdd(int number);
 int getNumberFromUser();
 
 // Return Type: int
-// Name: throwDice
+// Name: pressAnyKey
 // Parameters: None
 // Declaration
-int throwDice();
+int pressAnyKey();
 
 // Return Type: int
 // Name: returnRandom
