@@ -71,7 +71,6 @@ for (i = 0; i < height; i++)
         } 
         printf("\n");    
     }
-usleep (100000); 
 
 //    array2 in zwei geschachtelten schleifen entlangehen und nach regel befüllen
 for (i = 0; i < height; i++)
@@ -107,7 +106,7 @@ for (i = 0; i < height; i++)
                     array2[j][i] = 0;
                 if (living_cells_around > 3)
                     array2[j][i] = 0;
-                if ((living_cells_around == 2) || (living_cells_around == 3))
+                if ((living_cells_around == 2) || (living_cells_around == 3))  
                     array2[j][i] = 1;
             } 
             else
@@ -117,10 +116,12 @@ for (i = 0; i < height; i++)
             
             if (array1[j][i] == 0)
             {
-                if (living_cells_around == 3)
+                if ((living_cells_around == 2) || (living_cells_around == 3))
+                {
+                    if (returnRandom(0,5) == 1)
                     array2[j][i] = 1;
+                }
             }
-            
             // copy each element of array1 in array3  
             // array3[j][i] = array1[j][i];
         }
@@ -150,7 +151,6 @@ for (i = 0; i < height; i++)
         printf("\n");    
     }
 
-usleep (100000); 
 
 
 //    array1 in zwei geschachtelten schleifen entlangehen und nach regel befüllen
@@ -195,10 +195,12 @@ for (i = 0; i < height; i++)
             
             if (array2[j][i] == 0)
             {
-                if (living_cells_around == 3)
-                    array1[j][i] = 1;
+                if ((living_cells_around == 2) || (living_cells_around == 3))
+                {
+                    if (returnRandom(0,5) == 1)
+                        array1[j][i] = 1;
+                }
             }
-            
             // check if xy identical with last round's copy of array 1 before changing matrix 1
             // not_same = 0;
             // if (array1[j][i] != array3[j][i])
