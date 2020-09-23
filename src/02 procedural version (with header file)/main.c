@@ -212,7 +212,7 @@ for (i = 0; i < height; i++)
 generation_counter++;
 printf("Generation #%d\n", generation_counter);
 // go_on = getNumberFromUser();
-pressAnyKey();
+// pressAnyKey();
 } //End while loop
 
 return 0;
