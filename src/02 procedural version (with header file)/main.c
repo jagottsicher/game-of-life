@@ -19,6 +19,7 @@ int j;
 int living_cells_around = 0;
 int go_on = 1;
 int generation_counter = 0;
+char teststring[100] = {"This is just a teststring."};
 // int not_same = 1;
 
 int main()
@@ -30,13 +31,13 @@ for (i = 0; i < height; i++)
         for (j = 0; j < width; j++)
         {
             array1[j][i] = 0;
-            array2[j][i] = 0;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+            array2[j][i] = 0;
             // array3[j][i] = 0;
         }
     }
 
 // Array1 in zwei geschachtelten for Schleifen mit zufällig mit 0 und 1 füllen
-srand(time(NULL)); 
+srand(time(NULL));
 for (i = 0; i < height; i++)
     {
         for (j = 0; j < width; j++)
@@ -48,6 +49,12 @@ for (i = 0; i < height; i++)
 // anykey and clear screen
 pressAnyKey();
 clear();
+
+rowWiseOutput(teststring);
+
+pressAnyKey();
+clear();
+
 
 // main loop
 while (go_on)
@@ -62,7 +69,7 @@ for (i = 0; i < height; i++)
     {
         for (j = 0; j < width; j++)
         {
-        if (array1[j][i] == 1) 
+        if (array1[j][i] == 1)
             {
             printf("*");
             }
@@ -70,8 +77,8 @@ for (i = 0; i < height; i++)
             {
             printf(" ");
             }
-        } 
-        printf("\n");    
+        }
+        printf("\n");
     }
 
 //    array2 in zwei geschachtelten schleifen entlangehen und nach regel befüllen

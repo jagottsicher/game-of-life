@@ -21,3 +21,16 @@ int returnRandom(int lower, int upper);
 // Parameters: None
 // Declaration
 void clear();
+
+// Return Type: void
+// Name: fancyCursoriterations
+// Parameters: None
+// Declaration
+void fancyCursor(int iterations);
+
+
+// Return Type: void
+// Name: row-wiseOutput
+// Parameters: inputstring, legth
+// Declaration
+void rowWiseOutput(char inputstring[]);
